@@ -84,9 +84,11 @@ public class Colosseum {
         while (input == false) {
             if (playerPokemonHP > 50 || playerPokemonHP < 1) {
                 System.out.println("Sorry. Hit points must be between 1 and 50: ");
+                playerPokemonHP = myScan.nextInt();
             } else {
                 System.out.println("Your pokemon's hit points have been set to " + playerPokemonHP + ".");
                 input = true;
+            }
         }
 
         //allows player to set attack and defense levels
@@ -107,13 +109,13 @@ public class Colosseum {
         input = false;
         while (input == false) {
             if (playerPokemonDefLvl > (MAX_HIT_POINTS - playerPokemonAtkLvl) || playerPokemonDefLvl < 1) {
-                System.out.println("Your pokemon's defense level has been set to " + playerPokemonDefLvl + ".");
+                System.out.println("Sorry. The defense level must be between 1 and " + (MAX_HIT_POINTS - playerPokemonAtkLvl) + ".");
+                playerPokemonDefLvl = myScan.nextInt();
             } else {
                 System.out.println("Your pokemon's defense level has been set to " + playerPokemonDefLvl + ".");
                 input = true;
             }
         }
-
         //pokemon set up complete!
         return playerPokemon;
     }
